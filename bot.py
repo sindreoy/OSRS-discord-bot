@@ -39,6 +39,4 @@ async def combinations(ctx):
 
 
 if TOKEN:
-    combinations = get_money_making_combinations(combinations=LIST_OF_COMBINATIONS)
-    response = print_table_of_combinations(combinations)
     bot.run(TOKEN)
