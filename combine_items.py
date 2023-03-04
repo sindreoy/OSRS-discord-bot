@@ -5,7 +5,9 @@ from constants import ALL_ITEMS_URL, HEADERS
 from my_types import CombinationDict
 
 
-def get_money_making_combinations(combinations: list[CombinationDict]):
+def get_money_making_combinations(
+    combinations: list[CombinationDict],
+) -> list[CombinationDict]:
     response = requests.get(ALL_ITEMS_URL, headers=HEADERS)
     all_data = json.loads(response.content.decode())["data"]
 
