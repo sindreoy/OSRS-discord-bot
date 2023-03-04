@@ -1,4 +1,4 @@
-from formatter import print_table_of_combinations
+from format_utils import print_table_of_combinations
 from items import LIST_OF_COMBINATIONS
 import os
 from io import StringIO
@@ -31,13 +31,12 @@ async def on_ready():
     help="Prints out a table of prices for combining items into a product",
 )
 async def combinations(ctx):
-    combinations = get_money_making_combinations(
-        combinations=LIST_OF_COMBINATIONS
-    )
+    combinations = get_money_making_combinations(combinations=LIST_OF_COMBINATIONS)
     response = print_table_of_combinations(combinations)
     buffer = StringIO(response)
     f = discord.File(buffer, filename="combinations.txt")
     await ctx.send(file=f)
 
 
-bot.run(TOKEN)
+if TOKEN:
+    bot.run(TOKEN)
