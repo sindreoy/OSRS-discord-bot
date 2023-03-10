@@ -23,5 +23,4 @@ def print_table_of_combinations(combinations: list[CombinationDict]) -> str:
         )
         for combination in combinations
     ]
-    print(table)
     return tabulate(table, headers=headers, tablefmt="simple")
